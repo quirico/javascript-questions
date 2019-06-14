@@ -1210,14 +1210,15 @@ Then, `[1, 2, 0, 1]` is `acc` and `[2, 3]` is `cur`. We concatenate them, and ge
 
 ```javascript
 !!null;
+!![]
 !!"";
 !!1;
 ```
 
-- A: `false` `true` `false`
-- B: `false` `false` `true`
-- C: `false` `true` `true`
-- D: `true` `true` `false`
+- A: `false` `true` `true` `false`
+- B: `false` `true` `false` `true`
+- C: `false` `false` `true` `true`
+- D: `true` `false` `true` `false`
 
 <details><summary><b>Answer</b></summary>
 <p>
@@ -1225,6 +1226,8 @@ Then, `[1, 2, 0, 1]` is `acc` and `[2, 3]` is `cur`. We concatenate them, and ge
 #### Answer: B
 
 `null` is falsy. `!null` returns `true`. `!true` returns `false`.
+
+`[]` is truthy. `![]` returns `false`. `!![]` returns `true`.
 
 `""` is falsy. `!""` returns `true`. `!true` returns `false`.
 
